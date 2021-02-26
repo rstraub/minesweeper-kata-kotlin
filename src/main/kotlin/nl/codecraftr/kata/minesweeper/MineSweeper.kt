@@ -1,10 +1,11 @@
 package nl.codecraftr.kata.minesweeper
 
 class MineSweeper {
-   fun solve(minefields: String) = "hello minesweeper"
+    fun solve(minefields: String) = "hello minesweeper"
 }
 
-fun main() = MineSweeper().solve("""
+fun main() = MineSweeper().solve(
+    """
    4 4
    *...
    ....
@@ -15,5 +16,5 @@ fun main() = MineSweeper().solve("""
    .....
    .*...
    0 0
-""".trimIndent())
-   .run(::print)
+""".trimIndent()
+).run(::print)
