@@ -14,10 +14,11 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5:4.3.1")
     testImplementation("io.kotest:kotest-assertions-core:4.3.1")
     testImplementation("io.kotest:kotest-property:4.3.1")
+    testImplementation("io.mockk:mockk:1.10.6")
 }
 
 application {
-    mainClass.set("nl.codecraftr.kata.minesweeper.MineSweeperKt")
+    mainClass.set("nl.codecraftr.kata.minesweeper.MineSweeperAppKt")
 }
 
 tasks.withType<Test> {

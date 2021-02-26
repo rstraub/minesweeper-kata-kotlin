@@ -9,7 +9,7 @@ internal class MineSweeperAcceptanceTest : BehaviorSpec({
             then("it should return zero solved minefields") {
                 val input = ""
 
-                val result = MineSweeper().solve(input)
+                val result = MineSweeperApp().solve(input)
 
                 result shouldBe ""
             }
@@ -21,7 +21,7 @@ internal class MineSweeperAcceptanceTest : BehaviorSpec({
             then("it should return zero solved minefields") {
                 val input = "0 0"
 
-                val result = MineSweeper().solve(input)
+                val result = MineSweeperApp().solve(input)
 
                 result shouldBe ""
             }
@@ -48,7 +48,7 @@ internal class MineSweeperAcceptanceTest : BehaviorSpec({
                     1110 
                 """.trimIndent()
 
-                val result = MineSweeper().solve(input)
+                val result = MineSweeperApp().solve(input)
 
                 result shouldBe expected
             }
