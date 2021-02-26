@@ -1,7 +1,7 @@
 package nl.codecraftr.kata.minesweeper
 
 class MineSweeper {
-    fun solve(minefields: String) = "hello minesweeper"
+    fun solve(minefields: String) = ""
 }
 
 fun main() = MineSweeper().solve(
