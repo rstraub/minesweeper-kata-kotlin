@@ -17,7 +17,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("nl.codecraftr.kata.minesweeper.MineSweeperAppKt")
+    mainClass.set("nl.codecraftr.kata.minesweeper.MineSweeperKt")
 }
 
 tasks.withType<Test> {
