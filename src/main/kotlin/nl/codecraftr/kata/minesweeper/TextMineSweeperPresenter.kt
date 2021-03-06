@@ -19,6 +19,12 @@ class TextMineSweeperPresenter : MineSweeperPresenter {
     }
 
     private fun presentRows(rows: List<MineFieldRow>): String {
-        return rows.joinToString("\n") { "*" }
+        return rows
+            .map {
+                it.squares
+                    .map(Mine::value)
+                    .joinToString(separator = "")
+            }
+            .joinToString("\n")
     }
 }

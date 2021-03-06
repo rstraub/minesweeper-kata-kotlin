@@ -66,5 +66,28 @@ class TextMineSweeperPresenterTest : WordSpec({
 
             result shouldBe expected
         }
+
+        "return string representation given minefield with single row and multiple squares" {
+            val mineSweeper = MineSweeper(
+                listOf(
+                    MineField(
+                        listOf(
+                            MineFieldRow(
+                                listOf(Mine(), Mine())
+                            )
+                        )
+                    )
+                )
+            )
+
+            val expected = """
+                Field #1:
+                **
+            """.trimIndent()
+
+            val result = textMineSweeperPresenter.present(mineSweeper)
+
+            result shouldBe expected
+        }
     }
 })
