@@ -4,24 +4,18 @@ import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 
 internal class MineSweeperAppEndToEndTest : BehaviorSpec({
-    given("a single minefield") {
+    given("a single minefield with a single square and row") {
         `when`("it is solved") {
             then("it should return the solved minefield") {
                 val input = """
-                    4 4
-                    *...
-                    ....
-                    .*..
-                    ....
+                    1 1
+                    .
                     0 0
                 """.trimIndent()
 
                 val expected = """
                     Field #1:
-                    *100
-                    2210
-                    1*10
-                    1110 
+                    0
                 """.trimIndent()
 
                 val result = MineSweeperApp().solve(input)
