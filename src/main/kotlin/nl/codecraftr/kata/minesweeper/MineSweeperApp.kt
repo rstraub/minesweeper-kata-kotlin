@@ -1,13 +1,15 @@
 package nl.codecraftr.kata.minesweeper
 
-class MineSweeperApp {
-    fun solve(minefields: String) = minefields
-        .replace("1 1", "Field #1:")
-        .replace(".", "0")
-        .substringBeforeLast("\n0 0")
+class MineSweeperApp(private val mineSweeperTextPresenter: MineSweeperTextPresenter) {
+    fun solve(minefields: String): String {
+        return mineSweeperTextPresenter.present(MineSweeper())
+    }
+}
+object NoopPresenter : MineSweeperTextPresenter {
+    override fun present(mineSweeper: MineSweeper) = ""
 }
 
-fun main() = MineSweeperApp().solve(
+fun main() = MineSweeperApp(NoopPresenter).solve(
     """
    4 4
    *...

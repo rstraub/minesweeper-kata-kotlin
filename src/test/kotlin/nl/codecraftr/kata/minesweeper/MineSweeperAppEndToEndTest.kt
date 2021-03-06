@@ -18,7 +18,7 @@ internal class MineSweeperAppEndToEndTest : BehaviorSpec({
                     0
                 """.trimIndent()
 
-                val result = MineSweeperApp().solve(input)
+                val result = MineSweeperApp(NoopPresenter).solve(input)
 
                 result shouldBe expected
             }
