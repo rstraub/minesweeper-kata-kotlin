@@ -5,12 +5,15 @@ class TextMineSweeperPresenter : MineSweeperPresenter {
         return mineSweeper
             .fields
             .mapIndexed { index, mineField ->
-                """
-                    Field #${index + 1}:
-                    *
-                """.trimIndent()
+                presentField(index, mineField)
             }
             .joinToString("\n\n")
     }
 
+    private fun presentField(index: Int, mineField: MineField): String {
+        return """
+            Field #${index + 1}:
+            *
+        """.trimIndent()
+    }
 }
