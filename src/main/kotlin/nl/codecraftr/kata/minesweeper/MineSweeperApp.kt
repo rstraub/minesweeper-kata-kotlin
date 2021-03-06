@@ -2,15 +2,15 @@ package nl.codecraftr.kata.minesweeper
 
 class MineSweeperApp(
     private val mineSweeperNotationParser: MineSweeperNotationParser,
-    private val mineSweeperTextPresenter: MineSweeperTextPresenter
+    private val mineSweeperPresenter: MineSweeperPresenter
 ) {
     fun solve(minefields: String) =
         mineSweeperNotationParser
             .parse(minefields)
-            .let(mineSweeperTextPresenter::present)
+            .let(mineSweeperPresenter::present)
 }
 
-object NoopInputOutputParser : MineSweeperTextPresenter, MineSweeperNotationParser {
+object NoopInputOutputParser : MineSweeperPresenter, MineSweeperNotationParser {
     override fun present(mineSweeper: MineSweeper) = ""
     override fun parse(mineSweeperNotation: String) = MineSweeper(emptyList())
 }

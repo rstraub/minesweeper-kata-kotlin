@@ -8,7 +8,7 @@ import io.mockk.mockk
 
 internal class MineSweeperAppTest : WordSpec({
     val mineSweeperTextParser = mockk<MineSweeperNotationParser>()
-    val mineSweeperTextPresenter = mockk<MineSweeperTextPresenter>()
+    val mineSweeperTextPresenter = mockk<MineSweeperPresenter>()
     val mineSweeperApp = MineSweeperApp(mineSweeperTextParser, mineSweeperTextPresenter)
 
     afterEach {

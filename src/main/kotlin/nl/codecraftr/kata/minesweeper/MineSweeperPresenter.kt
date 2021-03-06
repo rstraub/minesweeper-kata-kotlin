@@ -1,5 +1,5 @@
 package nl.codecraftr.kata.minesweeper
 
-interface MineSweeperTextPresenter {
+interface MineSweeperPresenter {
     fun present(mineSweeper: MineSweeper) : String
 }
