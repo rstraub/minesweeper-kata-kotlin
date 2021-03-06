@@ -4,6 +4,8 @@ import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 
 internal class MineSweeperAppEndToEndTest : BehaviorSpec({
+    val mineSweeperApp = MineSweeperApp(NoopInputOutputParser, TextMineSweeperPresenter())
+
     given("a single minefield with a single square and row") {
         `when`("it is solved") {
             then("it should return the solved minefield") {
@@ -18,7 +20,7 @@ internal class MineSweeperAppEndToEndTest : BehaviorSpec({
                     0
                 """.trimIndent()
 
-                val result = MineSweeperApp(NoopInputOutputParser, NoopInputOutputParser).solve(input)
+                val result = mineSweeperApp.solve(input)
 
                 result shouldBe expected
             }
