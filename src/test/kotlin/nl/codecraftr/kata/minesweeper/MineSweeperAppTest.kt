@@ -7,8 +7,9 @@ import io.mockk.every
 import io.mockk.mockk
 
 internal class MineSweeperAppTest : WordSpec({
+    val mineSweeperTextParser = mockk<MineSweeperTextParser>()
     val mineSweeperTextPresenter = mockk<MineSweeperTextPresenter>()
-    val mineSweeperApp = MineSweeperApp(mineSweeperTextPresenter)
+    val mineSweeperApp = MineSweeperApp(mineSweeperTextParser, mineSweeperTextPresenter)
 
     afterEach {
         clearAllMocks()
@@ -26,8 +27,9 @@ internal class MineSweeperAppTest : WordSpec({
                 Field #1:
                 0
             """.trimIndent()
-            val mineSweeper = MineSweeper(emptyList())
 
+            val mineSweeper = MineSweeper(emptyList())
+            every { mineSweeperTextParser.parse(mineSweeperInput) } returns mineSweeper
             every { mineSweeperTextPresenter.present(mineSweeper) } returns expected
 
             val result = mineSweeperApp.solve(mineSweeperInput)

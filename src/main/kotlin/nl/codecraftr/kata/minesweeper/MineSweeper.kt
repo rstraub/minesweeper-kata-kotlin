@@ -1,3 +1,3 @@
 package nl.codecraftr.kata.minesweeper
 
-data class MineSweeper(val fields : List<MineField>)
+class MineSweeper(val fields : List<MineField>)
