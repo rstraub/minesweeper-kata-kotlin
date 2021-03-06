@@ -1,5 +1,3 @@
 package nl.codecraftr.kata.minesweeper
 
-class MineField(rows: List<MineFieldRow>) {
-
-}
+class MineField(val rows: List<MineFieldRow>)

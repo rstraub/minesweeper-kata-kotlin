@@ -11,9 +11,14 @@ class TextMineSweeperPresenter : MineSweeperPresenter {
     }
 
     private fun presentField(index: Int, mineField: MineField): String {
+        val rowsContent = presentRows(mineField.rows)
         return """
-            Field #${index + 1}:
-            *
-        """.trimIndent()
+            |Field #${index + 1}:
+            |$rowsContent
+        """.trimMargin()
+    }
+
+    private fun presentRows(rows: List<MineFieldRow>): String {
+        return rows.joinToString("\n") { "*" }
     }
 }
