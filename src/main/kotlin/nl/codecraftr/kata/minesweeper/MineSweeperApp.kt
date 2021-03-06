@@ -2,7 +2,7 @@ package nl.codecraftr.kata.minesweeper
 
 class MineSweeperApp(private val mineSweeperTextPresenter: MineSweeperTextPresenter) {
     fun solve(minefields: String): String {
-        return mineSweeperTextPresenter.present(MineSweeper())
+        return mineSweeperTextPresenter.present(MineSweeper(emptyList()))
     }
 }
 object NoopPresenter : MineSweeperTextPresenter {
