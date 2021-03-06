@@ -1,5 +1,5 @@
 package nl.codecraftr.kata.minesweeper
 
-interface MineSweeperTextParser {
+interface MineSweeperNotationParser {
     fun parse(mineSweeperNotation: String): MineSweeper
 }
